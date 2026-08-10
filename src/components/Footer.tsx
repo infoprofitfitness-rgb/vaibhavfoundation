@@ -108,25 +108,30 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="relative z-10 border-t border-white/15">
-        <div className="container-site flex flex-col gap-3 py-5 text-sm text-white/65 md:flex-row md:items-center md:justify-between">
-          <p>© All Copyright 2026 by {site.name}</p>
-          <div className="flex flex-col gap-1 md:items-end">
+      <div className="relative z-10 border-t border-white/15 bg-black/20">
+        <div className="mx-auto w-full max-w-[1200px] px-5 py-6 text-center sm:px-6">
+          <p className="m-0 text-sm font-medium text-white/85">
+            © All Copyright 2026 by {site.name}
+          </p>
+          <div className="mt-3 flex flex-col items-center justify-center gap-2 text-[13px] leading-snug text-white/65 sm:mt-2.5 sm:flex-row sm:flex-wrap sm:gap-x-2 sm:gap-y-1 sm:text-sm">
             <a
               href={site.developerUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="transition hover:text-[var(--oxpins-primary)]"
             >
-              WebsiteDevelopmentServicesInJaipurByFlowrushTechnologies
+              Website Development Services In Jaipur By Flowrush Technologies
             </a>
+            <span className="hidden text-white/35 sm:inline" aria-hidden>
+              ·
+            </span>
             <a
               href={site.developerUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="transition hover:text-[var(--oxpins-primary)]"
             >
-              WebsiteMaintenanceServicesInJaipurByFlowrushTechnologies
+              Website Maintenance Services In Jaipur By Flowrush Technologies
             </a>
           </div>
         </div>

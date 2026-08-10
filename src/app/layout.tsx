@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Caveat, Manrope, Nunito } from "next/font/google";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import { site } from "@/lib/site";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -22,11 +21,11 @@ const caveat = Caveat({
 
 export const metadata: Metadata = {
   title: {
-    default: site.name,
-    template: `%s - ${site.name}`,
+    default: "Vaibhav Foundation Welfare Society | NGO in Jaipur",
+    template: `%s | Vaibhav Foundation Welfare Society`,
   },
   description:
-    "Vaibhav Foundation Welfare Society is a Jaipur-based welfare society working for education, healthcare, women empowerment, and community support.",
+    "Vaibhav Foundation Welfare Society is a registered welfare society in Jaipur working for education support, healthcare awareness, women empowerment, child welfare, food support and community welfare.",
   icons: {
     icon: "/images/cropped-Vaibhav-Foundation.webp",
   },

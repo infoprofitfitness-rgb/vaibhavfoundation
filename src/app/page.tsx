@@ -3,12 +3,6 @@ import HeroSlider from "@/components/HeroSlider";
 import { focusAreas, initiatives, site } from "@/lib/site";
 import Image from "next/image";
 import Link from "next/link";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Home",
-};
-
 const helpWays = [
   {
     title: "Donate",
