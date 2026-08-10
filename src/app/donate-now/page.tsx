@@ -23,10 +23,10 @@ export default function DonateNowPage() {
       <PageHeader title="Donate Now" />
 
       <section className="section-pad">
-        <div className="container-site grid items-center gap-10 lg:grid-cols-2">
+        <div className="container-site grid items-center gap-8 lg:grid-cols-2 lg:gap-10">
           <div>
             <p className="eyebrow mb-2">Make A Donation</p>
-            <h2 className="heading mb-4 text-3xl md:text-4xl">
+            <h2 className="heading mb-4 text-2xl sm:text-3xl md:text-4xl">
               Your Support Can Help Someone In Need
             </h2>
             <p className="mb-6 text-[var(--oxpins-gray)]">
@@ -51,9 +51,9 @@ export default function DonateNowPage() {
 
       <section id="donate-methods" className="section-pad bg-[var(--oxpins-extra)]">
         <div className="container-site grid gap-8 lg:grid-cols-2">
-          <div className="rounded-[28px] bg-white p-6 md:p-8">
-            <h3 className="heading mb-3 text-2xl">Donate Via UPI</h3>
-            <p className="mb-5 text-[var(--oxpins-gray)]">
+          <div className="rounded-2xl bg-white p-5 sm:rounded-[28px] sm:p-6 md:p-8">
+            <h3 className="heading mb-3 text-xl sm:text-2xl">Donate Via UPI</h3>
+            <p className="mb-5 text-sm text-[var(--oxpins-gray)] sm:text-base">
               Scan the QR Code below using any UPI-enabled app such as Google
               Pay, PhonePe, Paytm, BHIM, or your banking app.
             </p>
@@ -62,7 +62,7 @@ export default function DonateNowPage() {
               alt="UPI QR Code"
               width={320}
               height={320}
-              className="mx-auto mb-5 rounded-2xl border border-[var(--oxpins-bdr-color)]"
+              className="mx-auto mb-5 h-auto w-full max-w-[260px] rounded-2xl border border-[var(--oxpins-bdr-color)] sm:max-w-[320px]"
             />
             <p className="mb-1 text-sm text-[var(--oxpins-gray)]">UPI ID:</p>
             <p className="mb-4 break-all font-bold text-[var(--oxpins-base)]">
@@ -72,8 +72,10 @@ export default function DonateNowPage() {
             <p className="font-bold">{site.bank.accountName}</p>
           </div>
 
-          <div className="rounded-[28px] bg-white p-6 md:p-8">
-            <h3 className="heading mb-3 text-2xl">Donate Via Bank Transfer</h3>
+          <div className="rounded-2xl bg-white p-5 sm:rounded-[28px] sm:p-6 md:p-8">
+            <h3 className="heading mb-3 text-xl sm:text-2xl">
+              Donate Via Bank Transfer
+            </h3>
             <p className="mb-5 text-[var(--oxpins-gray)]">Bank Details</p>
             <dl className="space-y-4">
               {[

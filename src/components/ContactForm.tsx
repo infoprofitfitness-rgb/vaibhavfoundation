@@ -13,7 +13,7 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={onSubmit}
-      className="rounded-[24px] border border-[var(--oxpins-bdr-color)] bg-white p-6 shadow-[0_20px_60px_rgba(40,55,52,0.08)] md:p-8"
+      className="rounded-2xl border border-[var(--oxpins-bdr-color)] bg-white p-4 shadow-[0_20px_60px_rgba(40,55,52,0.08)] sm:rounded-[24px] sm:p-6 md:p-8"
     >
       <div className="grid gap-4 md:grid-cols-2">
         <input

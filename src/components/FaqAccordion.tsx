@@ -17,11 +17,11 @@ export default function FaqAccordion() {
           >
             <button
               type="button"
-              className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-[family-name:var(--oxpins-font-two)] text-lg font-bold text-[var(--oxpins-black)]"
+              className="flex w-full items-start justify-between gap-3 px-4 py-3.5 text-left font-[family-name:var(--oxpins-font-two)] text-base font-bold text-[var(--oxpins-black)] sm:items-center sm:gap-4 sm:px-5 sm:py-4 sm:text-lg"
               onClick={() => setOpen(active ? -1 : idx)}
               aria-expanded={active}
             >
-              <span>{item.q}</span>
+              <span className="min-w-0 flex-1 pr-1">{item.q}</span>
               <span
                 className={`inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-sm ${
                   active
@@ -33,7 +33,7 @@ export default function FaqAccordion() {
               </span>
             </button>
             {active && (
-              <div className="border-t border-[var(--oxpins-bdr-color)] px-5 py-4 text-[var(--oxpins-gray)]">
+              <div className="border-t border-[var(--oxpins-bdr-color)] px-4 py-3.5 text-sm text-[var(--oxpins-gray)] sm:px-5 sm:py-4 sm:text-base">
                 {item.a}
               </div>
             )}

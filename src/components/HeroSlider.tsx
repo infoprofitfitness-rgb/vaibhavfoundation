@@ -38,23 +38,23 @@ export default function HeroSlider() {
   return (
     <section className="relative overflow-hidden bg-[var(--oxpins-extra)]">
       <div
-        className="absolute inset-0 opacity-40"
+        className="absolute inset-0 opacity-30 sm:opacity-40"
         style={{
           backgroundImage: "url(/images/main-slider-shape-1.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       />
-      <div className="container-site relative grid min-h-[78vh] items-center gap-8 py-16 lg:grid-cols-2">
-        <div key={slide.title} className="hero-slide z-10 max-w-xl">
-          <p className="eyebrow mb-3">{slide.eyebrow}</p>
-          <h1 className="heading mb-8 text-4xl md:text-5xl lg:text-[3.5rem]">
+      <div className="container-site relative grid items-center gap-8 py-10 sm:py-14 lg:min-h-[72vh] lg:grid-cols-2 lg:gap-10 lg:py-16">
+        <div key={slide.title} className="hero-slide z-10 order-2 max-w-xl lg:order-1">
+          <p className="eyebrow mb-2 sm:mb-3">{slide.eyebrow}</p>
+          <h1 className="heading mb-5 text-[1.85rem] leading-tight sm:mb-7 sm:text-4xl md:text-5xl lg:text-[3.4rem]">
             {slide.title}
           </h1>
           <Link href={slide.cta.href} className="btn btn-base">
             {slide.cta.label}
           </Link>
-          <div className="mt-8 flex gap-2">
+          <div className="mt-6 flex gap-2 sm:mt-8">
             {slides.map((_, i) => (
               <button
                 key={i}
@@ -71,8 +71,11 @@ export default function HeroSlider() {
           </div>
         </div>
 
-        <div key={`${slide.title}-img`} className="relative hero-slide">
-          <div className="relative mx-auto aspect-[4/5] max-w-[480px] overflow-hidden rounded-[40%_40%_40%_40%/45%_45%_35%_35%] shadow-[0_30px_80px_rgba(0,113,93,0.25)]">
+        <div
+          key={`${slide.title}-img`}
+          className="relative hero-slide order-1 mx-auto w-full max-w-[320px] sm:max-w-[400px] lg:order-2 lg:max-w-[480px]"
+        >
+          <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-[0_20px_50px_rgba(0,113,93,0.22)] sm:rounded-[40%_40%_40%_40%/45%_45%_35%_35%]">
             <Image
               src={slide.image}
               alt={slide.title}
@@ -87,14 +90,14 @@ export default function HeroSlider() {
             alt=""
             width={120}
             height={120}
-            className="float-soft absolute -left-2 top-8 w-20 md:w-28"
+            className="float-soft absolute -left-1 top-6 hidden w-16 sm:block md:w-24"
           />
           <Image
             src={slide.shape}
             alt=""
             width={160}
             height={160}
-            className="absolute -bottom-4 -right-2 w-28 opacity-90 md:w-36"
+            className="absolute -bottom-3 -right-1 hidden w-20 opacity-90 sm:block md:w-32"
           />
         </div>
       </div>

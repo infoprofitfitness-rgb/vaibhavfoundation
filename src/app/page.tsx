@@ -33,9 +33,9 @@ export default function HomePage() {
 
       {/* About */}
       <section className="section-pad relative overflow-hidden">
-        <div className="container-site grid items-center gap-12 lg:grid-cols-2">
+        <div className="container-site grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
           <div className="relative">
-            <div className="relative overflow-hidden rounded-[30px]">
+            <div className="relative overflow-hidden rounded-2xl sm:rounded-[30px]">
               <Image
                 src="/images/vaibhav_foundation_high_quality.jpg.webp"
                 alt={site.name}
@@ -49,20 +49,20 @@ export default function HomePage() {
               alt=""
               width={120}
               height={120}
-              className="float-soft absolute -left-4 top-10 w-20"
+              className="float-soft absolute -left-4 top-10 hidden w-20 sm:block"
             />
             <Image
               src="/images/curved-circle-icon.png"
               alt=""
               width={140}
               height={140}
-              className="absolute -bottom-6 right-6 w-28"
+              className="absolute -bottom-6 right-6 hidden w-28 sm:block"
             />
           </div>
 
           <div className="fade-up">
             <p className="eyebrow mb-2">{site.name}</p>
-            <h2 className="heading mb-5 text-3xl md:text-4xl">
+            <h2 className="heading mb-4 text-2xl sm:mb-5 sm:text-3xl md:text-4xl">
               About Vaibhav Foundation Welfare Society
             </h2>
             <p className="mb-4 text-[var(--oxpins-gray)]">
@@ -131,9 +131,11 @@ export default function HomePage() {
         }}
       >
         <div className="container-site">
-          <div className="mx-auto mb-12 max-w-3xl text-center">
+          <div className="mx-auto mb-8 max-w-3xl text-center sm:mb-12">
             <p className="eyebrow mb-2">{site.name}</p>
-            <h2 className="heading mb-4 text-3xl md:text-4xl">Our Focus Areas</h2>
+            <h2 className="heading mb-4 text-2xl sm:text-3xl md:text-4xl">
+              Our Focus Areas
+            </h2>
             <p className="text-[var(--oxpins-gray)]">
               We focus on key areas that help improve lives, strengthen
               communities, and provide support to those who need it most. Through
@@ -147,7 +149,7 @@ export default function HomePage() {
               <Link
                 key={area.title}
                 href={area.href}
-                className="group rounded-[24px] bg-white p-7 shadow-[0_15px_40px_rgba(40,55,52,0.06)] transition hover:-translate-y-1 hover:shadow-[0_25px_50px_rgba(0,113,93,0.12)]"
+                className="group rounded-2xl bg-white p-5 shadow-[0_15px_40px_rgba(40,55,52,0.06)] transition hover:-translate-y-1 hover:shadow-[0_25px_50px_rgba(0,113,93,0.12)] sm:rounded-[24px] sm:p-7"
                 style={{ animationDelay: `${idx * 0.05}s` }}
               >
                 <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--oxpins-extra)] text-2xl text-[var(--oxpins-base)] transition group-hover:bg-[var(--oxpins-base)] group-hover:text-white">
@@ -166,7 +168,7 @@ export default function HomePage() {
         <div className="container-site grid items-center gap-10 lg:grid-cols-2">
           <div>
             <p className="eyebrow mb-2">Why Support Us</p>
-            <h2 className="heading mb-5 text-3xl md:text-4xl">
+            <h2 className="heading mb-4 text-2xl sm:mb-5 sm:text-3xl md:text-4xl">
               Why Support Vaibhav Foundation Welfare Society?
             </h2>
             <p className="mb-6 text-[var(--oxpins-gray)]">
@@ -195,7 +197,7 @@ export default function HomePage() {
             </Link>
           </div>
           <div
-            className="relative overflow-hidden rounded-[30px] p-10 text-white"
+            className="relative overflow-hidden rounded-2xl p-6 text-white sm:rounded-[30px] sm:p-10"
             style={{
               backgroundImage:
                 "linear-gradient(135deg, rgba(0,113,93,0.92), rgba(40,55,52,0.9)), url(/images/why-choose-bg.png)",
@@ -207,9 +209,9 @@ export default function HomePage() {
               alt="Community support"
               width={640}
               height={420}
-              className="mb-6 h-56 w-full rounded-[24px] object-cover"
+              className="mb-5 h-44 w-full rounded-2xl object-cover sm:mb-6 sm:h-56 sm:rounded-[24px]"
             />
-            <div className="text-5xl font-extrabold text-[var(--oxpins-primary)]">
+            <div className="text-4xl font-extrabold text-[var(--oxpins-primary)] sm:text-5xl">
               00 +
             </div>
             <p className="mt-2 font-[family-name:var(--oxpins-font-two)] text-xl font-bold">
@@ -222,9 +224,11 @@ export default function HomePage() {
       {/* Initiatives */}
       <section className="section-pad bg-[var(--oxpins-extra)]">
         <div className="container-site">
-          <div className="mb-12 text-center">
+          <div className="mb-8 text-center sm:mb-12">
             <p className="eyebrow mb-2">Initiatives</p>
-            <h2 className="heading text-3xl md:text-4xl">Our Initiatives</h2>
+            <h2 className="heading text-2xl sm:text-3xl md:text-4xl">
+              Our Initiatives
+            </h2>
           </div>
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {initiatives.map((item) => (
@@ -254,8 +258,10 @@ export default function HomePage() {
       {/* How You Can Help */}
       <section className="section-pad">
         <div className="container-site">
-          <div className="mb-12 text-center">
-            <h2 className="heading text-3xl md:text-4xl">How You Can Help</h2>
+          <div className="mb-8 text-center sm:mb-12">
+            <h2 className="heading text-2xl sm:text-3xl md:text-4xl">
+              How You Can Help
+            </h2>
           </div>
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {helpWays.map((item, idx) => (
@@ -277,7 +283,7 @@ export default function HomePage() {
 
       {/* CTA */}
       <section
-        className="relative py-20 text-white"
+        className="relative py-14 text-white sm:py-20"
         style={{
           backgroundImage:
             "linear-gradient(90deg, rgba(0,113,93,0.92), rgba(20,17,15,0.88)), url(/images/view-hands-holding-red-heart-represent-affection_23-2151728375.jpg)",
@@ -289,7 +295,7 @@ export default function HomePage() {
           <p className="eyebrow mb-3 !text-[var(--oxpins-primary)]">
             Be A Part Of A Better Tomorrow
           </p>
-          <h2 className="mb-6 font-[family-name:var(--oxpins-font-two)] text-3xl font-extrabold md:text-4xl">
+          <h2 className="mb-6 font-[family-name:var(--oxpins-font-two)] text-xl font-extrabold leading-snug sm:text-3xl md:text-4xl">
             Your support can help us bring care, hope and opportunity to people
             who need it the most. Join Vaibhav Foundation Welfare Society as a
             donor, volunteer or supporter.
@@ -312,7 +318,7 @@ export default function HomePage() {
         <div className="container-site grid gap-10 lg:grid-cols-2">
           <div>
             <p className="eyebrow mb-2">Recently asked questions</p>
-            <h2 className="heading mb-5 text-3xl md:text-4xl">
+            <h2 className="heading mb-5 text-2xl sm:text-3xl md:text-4xl">
               Frequently Asked Questions
             </h2>
             <Link href="/contact/" className="btn btn-outline">
@@ -327,7 +333,7 @@ export default function HomePage() {
       <section className="section-pad bg-[var(--oxpins-extra-two)]">
         <div className="container-site">
           <div className="mb-8 max-w-3xl">
-            <h2 className="heading mb-3 text-3xl md:text-4xl">
+            <h2 className="heading mb-3 text-2xl sm:text-3xl md:text-4xl">
               Contact Vaibhav Foundation Welfare Society
             </h2>
             <p className="text-[var(--oxpins-gray)]">
@@ -349,7 +355,7 @@ export default function HomePage() {
                 <div className="mb-1 text-sm font-bold uppercase tracking-wide text-[var(--oxpins-base)]">
                   {label}
                 </div>
-                <div className="font-semibold text-[var(--oxpins-black)]">
+                <div className="break-words font-semibold text-[var(--oxpins-black)]">
                   {value}
                 </div>
               </div>

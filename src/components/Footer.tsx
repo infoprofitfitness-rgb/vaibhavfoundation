@@ -7,17 +7,17 @@ export default function Footer() {
     <footer className="relative overflow-hidden text-white bg-[linear-gradient(160deg,#00715d_0%,#1a3d36_42%,#14110f_100%)]">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(251,212,90,0.12),transparent_35%)]" />
 
-      <div className="container-site relative z-10 py-16 md:py-20">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
+      <div className="container-site relative z-10 py-12 sm:py-16 md:py-20">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
           <div className="sm:col-span-2 lg:col-span-4">
             <Image
               src={site.logo}
               alt={site.name}
               width={170}
               height={70}
-              className="mb-5 h-14 w-auto object-contain brightness-0 invert md:h-16"
+              className="mb-4 h-12 w-auto object-contain brightness-0 invert sm:mb-5 sm:h-14 md:h-16"
             />
-            <p className="mb-6 max-w-sm text-[15px] leading-relaxed text-white/75">
+            <p className="mb-5 max-w-sm text-sm leading-relaxed text-white/75 sm:mb-6 sm:text-[15px]">
               Vaibhav Foundation Welfare Society is a Jaipur-based welfare
               society working for education, healthcare, women empowerment, and
               community support.
@@ -86,11 +86,11 @@ export default function Footer() {
               Contact
             </h3>
             <ul className="space-y-3 text-[15px] text-white/75">
-              <li>{site.address}</li>
+              <li className="break-words">{site.address}</li>
               <li>
                 <a
                   href={`mailto:${site.email}`}
-                  className="text-[var(--oxpins-primary)] transition hover:underline"
+                  className="break-all text-[var(--oxpins-primary)] transition hover:underline"
                 >
                   {site.email}
                 </a>
@@ -109,16 +109,16 @@ export default function Footer() {
       </div>
 
       <div className="relative z-10 border-t border-white/15 bg-black/20">
-        <div className="mx-auto w-full max-w-[1200px] px-5 py-6 text-center sm:px-6">
-          <p className="m-0 text-sm font-medium text-white/85">
+        <div className="container-site py-5 text-center sm:py-6">
+          <p className="m-0 text-xs font-medium text-white/85 sm:text-sm">
             © All Copyright 2026 by {site.name}
           </p>
-          <div className="mt-3 flex flex-col items-center justify-center gap-2 text-[13px] leading-snug text-white/65 sm:mt-2.5 sm:flex-row sm:flex-wrap sm:gap-x-2 sm:gap-y-1 sm:text-sm">
+          <div className="mt-3 flex flex-col items-center justify-center gap-2 text-[12px] leading-snug text-white/65 sm:mt-2.5 sm:flex-row sm:flex-wrap sm:gap-x-2 sm:gap-y-1 sm:text-sm">
             <a
               href={site.developerUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="transition hover:text-[var(--oxpins-primary)]"
+              className="px-1 transition hover:text-[var(--oxpins-primary)]"
             >
               Website Development Services In Jaipur By Flowrush Technologies
             </a>
@@ -129,7 +129,7 @@ export default function Footer() {
               href={site.developerUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="transition hover:text-[var(--oxpins-primary)]"
+              className="px-1 transition hover:text-[var(--oxpins-primary)]"
             >
               Website Maintenance Services In Jaipur By Flowrush Technologies
             </a>

@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { navLinks, site } from "@/lib/site";
 
 export default function Header() {
@@ -16,58 +16,50 @@ export default function Header() {
     return pathname.startsWith(href.replace(/\/$/, ""));
   };
 
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   return (
     <header className="sticky top-0 z-50 bg-white shadow-[0_10px_30px_rgba(40,55,52,0.08)]">
-      <div className="hidden border-b border-[var(--oxpins-bdr-color)] bg-[var(--oxpins-extra)] lg:block">
-        <div className="container-site flex items-center justify-between gap-4 py-2.5 text-sm text-[var(--oxpins-gray)]">
+      <div className="border-b border-[var(--oxpins-bdr-color)] bg-[var(--oxpins-extra)]">
+        <div className="container-site flex items-center justify-between gap-3 py-2 text-xs text-[var(--oxpins-gray)] sm:text-sm">
+          <a
+            href={`tel:${site.phone.replace(/\s/g, "")}`}
+            className="font-bold text-[var(--oxpins-black)]"
+          >
+            {site.phone}
+          </a>
           <Link
             href="/become-volunteer/"
-            className="inline-flex items-center gap-2 font-semibold text-[var(--oxpins-base)]"
+            className="hidden font-semibold text-[var(--oxpins-base)] sm:inline"
           >
-            <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-[var(--oxpins-primary)] text-xs text-[var(--oxpins-black)]">
-              ♥
-            </span>
             Become a volunteers
           </Link>
-          <div className="flex flex-wrap items-center gap-6">
-            <div>
-              <div className="text-xs uppercase tracking-wide">Helpline</div>
-              <a
-                href={`tel:${site.phone.replace(/\s/g, "")}`}
-                className="font-bold text-[var(--oxpins-black)]"
-              >
-                {site.phoneDisplay}
-              </a>
-            </div>
-            <div>
-              <div className="text-xs uppercase tracking-wide">Send email</div>
-              <a
-                href={`mailto:${site.email}`}
-                className="font-bold text-[var(--oxpins-black)]"
-              >
-                {site.email}
-              </a>
-            </div>
-            <div>
-              <div className="text-xs uppercase tracking-wide">
-                {site.addressShort}
-              </div>
-              <div className="font-bold text-[var(--oxpins-black)]">
-                {site.addressRegion}
-              </div>
-            </div>
-          </div>
+          <a
+            href={`mailto:${site.email}`}
+            className="truncate font-bold text-[var(--oxpins-black)] max-w-[55%] sm:max-w-none"
+          >
+            {site.email}
+          </a>
         </div>
       </div>
 
-      <div className="container-site flex items-center justify-between gap-4 py-3">
-        <Link href="/" className="relative z-10 shrink-0">
+      <div className="container-site flex items-center justify-between gap-3 py-2.5 sm:py-3">
+        <Link href="/" className="relative z-10 min-w-0 shrink">
           <Image
             src={site.logo}
             alt={site.name}
             width={160}
             height={70}
-            className="h-14 w-auto object-contain md:h-16"
+            className="h-11 w-auto max-w-[140px] object-contain sm:h-14 sm:max-w-none md:h-16"
             priority
           />
         </Link>
@@ -83,7 +75,7 @@ export default function Header() {
               >
                 <button
                   type="button"
-                  className={`flex items-center gap-1 px-3 py-2 font-[family-name:var(--oxpins-font-two)] text-[15px] font-700 font-bold transition ${
+                  className={`flex items-center gap-1 px-3 py-2 font-[family-name:var(--oxpins-font-two)] text-[15px] font-bold transition ${
                     isActive(item.href)
                       ? "text-[var(--oxpins-base)]"
                       : "text-[var(--oxpins-black)] hover:text-[var(--oxpins-base)]"
@@ -122,14 +114,18 @@ export default function Header() {
           )}
         </nav>
 
-        <div className="flex items-center gap-3">
-          <Link href="/donate-now/" className="btn btn-primary hidden sm:inline-flex">
-            DONATE NOW
+        <div className="flex shrink-0 items-center gap-2">
+          <Link
+            href="/donate-now/"
+            className="btn btn-primary !min-h-10 !px-3 !text-xs sm:!min-h-12 sm:!px-5 sm:!text-sm"
+          >
+            DONATE
           </Link>
           <button
             type="button"
             aria-label="Toggle menu"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--oxpins-bdr-color)] text-[var(--oxpins-black)] xl:hidden"
+            aria-expanded={open}
+            className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-[var(--oxpins-bdr-color)] text-lg text-[var(--oxpins-black)] xl:hidden"
             onClick={() => setOpen((v) => !v)}
           >
             {open ? "✕" : "☰"}
@@ -138,13 +134,13 @@ export default function Header() {
       </div>
 
       {open && (
-        <div className="border-t border-[var(--oxpins-bdr-color)] bg-white xl:hidden">
-          <div className="container-site flex flex-col gap-1 py-4">
+        <div className="max-h-[min(80vh,560px)] overflow-y-auto border-t border-[var(--oxpins-bdr-color)] bg-white xl:hidden">
+          <div className="container-site flex flex-col gap-1 py-4 pb-6">
             {navLinks.map((item) => (
               <div key={item.label}>
                 <Link
                   href={item.href}
-                  className="block py-2 font-bold text-[var(--oxpins-black)]"
+                  className="block py-3 text-base font-bold text-[var(--oxpins-black)]"
                   onClick={() => setOpen(false)}
                 >
                   {item.label}
@@ -155,7 +151,7 @@ export default function Header() {
                       <Link
                         key={child.href}
                         href={child.href}
-                        className="py-1.5 text-sm font-semibold text-[var(--oxpins-gray)]"
+                        className="py-2 text-sm font-semibold text-[var(--oxpins-gray)]"
                         onClick={() => setOpen(false)}
                       >
                         {child.label}
@@ -167,10 +163,17 @@ export default function Header() {
             ))}
             <Link
               href="/donate-now/"
-              className="btn btn-primary mt-2"
+              className="btn btn-primary mt-3 w-full"
               onClick={() => setOpen(false)}
             >
               DONATE NOW
+            </Link>
+            <Link
+              href="/become-volunteer/"
+              className="btn btn-outline mt-2 w-full sm:hidden"
+              onClick={() => setOpen(false)}
+            >
+              Become a volunteers
             </Link>
           </div>
         </div>

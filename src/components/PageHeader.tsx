@@ -18,21 +18,27 @@ export default function PageHeader({ title, crumbs }: Props) {
       style={{ backgroundImage: `url(${site.pageHeaderBg})` }}
     >
       <div className="container-site page-header-inner fade-up">
-        <p className="mb-2 font-[family-name:var(--oxpins-font-three)] text-2xl text-[var(--oxpins-primary)]">
+        <p className="mb-1 font-[family-name:var(--oxpins-font-three)] text-lg text-[var(--oxpins-primary)] sm:mb-2 sm:text-2xl">
           {site.name}
         </p>
-        <h1 className="mb-4 font-[family-name:var(--oxpins-font-two)] text-4xl font-extrabold md:text-5xl">
+        <h1 className="mb-3 font-[family-name:var(--oxpins-font-two)] text-2xl font-extrabold leading-tight sm:mb-4 sm:text-4xl md:text-5xl">
           {title}
         </h1>
-        <div className="flex flex-wrap items-center gap-2 text-sm text-white/85">
+        <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-white/85 sm:text-sm">
           {items.map((item, idx) => (
-            <span key={`${item.label}-${idx}`} className="inline-flex items-center gap-2">
+            <span
+              key={`${item.label}-${idx}`}
+              className="inline-flex max-w-full items-center gap-2"
+            >
               {item.href ? (
-                <Link href={item.href} className="hover:text-[var(--oxpins-primary)]">
+                <Link
+                  href={item.href}
+                  className="hover:text-[var(--oxpins-primary)]"
+                >
                   {item.label}
                 </Link>
               ) : (
-                <span>{item.label}</span>
+                <span className="break-words">{item.label}</span>
               )}
               {idx < items.length - 1 && <span>/</span>}
             </span>
