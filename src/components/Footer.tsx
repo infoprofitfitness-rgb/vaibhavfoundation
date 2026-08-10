@@ -101,12 +101,25 @@ export default function Footer() {
 
       <div className="border-t border-white/10">
         <div className="container-site flex flex-col gap-2 py-5 text-sm text-[var(--oxpins-gray2,#CAB3A8)] md:flex-row md:items-center md:justify-between">
-          <p>
-            © All Copyright 2026 by {site.name}
-          </p>
-          <p>
-            Website Development by {site.developer}
-          </p>
+          <p>© All Copyright 2026 by {site.name}</p>
+          <div className="flex flex-col gap-1 md:items-end">
+            <a
+              href={site.developerUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[var(--oxpins-primary)]"
+            >
+              WebsiteDevelopmentServicesInJaipurByFlowrushTechnologies
+            </a>
+            <a
+              href={site.developerUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[var(--oxpins-primary)]"
+            >
+              WebsiteMaintenanceServicesInJaipurByFlowrushTechnologies
+            </a>
+          </div>
         </div>
       </div>
     </footer>

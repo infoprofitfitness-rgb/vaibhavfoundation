@@ -22,6 +22,7 @@ export const site = {
     branch: "Swan Path Branch, Mansarovar, Jaipur, Rajasthan",
   },
   developer: "Flowrush Technologies",
+  developerUrl: "https://www.flowrushagency.com/",
 };
 
 export const navLinks = [
