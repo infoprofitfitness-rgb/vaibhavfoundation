@@ -26,42 +26,50 @@ const workFor = [
   "Social Welfare Activities",
 ];
 
+const aboutGallery = Array.from({ length: 15 }, (_, i) => {
+  const n = String(i + 1).padStart(2, "0");
+  return {
+    src: `/images/about/about-gallery-${n}.jpg`,
+    alt: `Vaibhav Foundation Welfare Society community activity ${i + 1}`,
+  };
+});
+
 export default function AboutPage() {
   return (
     <>
       <PageHeader title="About" />
 
       <section className="section-pad">
-        <div className="container-site grid items-center gap-12 lg:grid-cols-2">
-          <div className="grid grid-cols-2 gap-4">
+        <div className="container-site grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
+          <div className="grid grid-cols-2 gap-3 sm:gap-4">
             <Image
-              src="/images/about-four-img-1.jpg"
-              alt="About foundation"
-              width={360}
-              height={420}
-              className="h-full rounded-[24px] object-cover"
+              src={aboutGallery[0].src}
+              alt={aboutGallery[0].alt}
+              width={420}
+              height={560}
+              className="h-full min-h-[260px] rounded-2xl object-cover sm:min-h-[340px] sm:rounded-[24px]"
             />
-            <div className="space-y-4 pt-8">
+            <div className="space-y-3 pt-4 sm:space-y-4 sm:pt-8">
               <Image
-                src="/images/about-four-img-2.jpg"
-                alt="Community work"
-                width={360}
-                height={200}
-                className="rounded-[24px] object-cover"
+                src={aboutGallery[1].src}
+                alt={aboutGallery[1].alt}
+                width={420}
+                height={240}
+                className="h-36 w-full rounded-2xl object-cover sm:h-44 sm:rounded-[24px]"
               />
               <Image
-                src="/images/high-angle-people-celebrating-eid-al-fitr_23-2151205071.jpg"
-                alt="Together for change"
-                width={360}
-                height={220}
-                className="rounded-[24px] object-cover"
+                src={aboutGallery[4].src}
+                alt={aboutGallery[4].alt}
+                width={420}
+                height={260}
+                className="h-40 w-full rounded-2xl object-cover sm:h-48 sm:rounded-[24px]"
               />
             </div>
           </div>
 
           <div>
             <p className="eyebrow mb-2">{site.name}</p>
-            <h2 className="heading mb-4 text-3xl md:text-4xl">
+            <h2 className="heading mb-4 text-2xl sm:text-3xl md:text-4xl">
               About Vaibhav Foundation Welfare Society
             </h2>
             <p className="mb-4 text-[var(--oxpins-gray)]">
@@ -81,10 +89,10 @@ export default function AboutPage() {
       </section>
 
       <section className="section-pad bg-[var(--oxpins-extra)]">
-        <div className="container-site grid gap-10 lg:grid-cols-2">
+        <div className="container-site grid gap-8 lg:grid-cols-2 lg:gap-10">
           <div>
             <p className="eyebrow mb-2">About The Foundation</p>
-            <h2 className="heading mb-4 text-3xl">Who We Are</h2>
+            <h2 className="heading mb-4 text-2xl sm:text-3xl">Who We Are</h2>
             <p className="mb-4 text-[var(--oxpins-gray)]">
               Vaibhav Foundation Welfare Society is a newly established
               foundation started with the aim of serving society and helping
@@ -98,17 +106,28 @@ export default function AboutPage() {
               who want to contribute towards social good.
             </p>
           </div>
-          <div className="rounded-[24px] bg-[var(--oxpins-base)] p-8 text-white">
-            <div className="mb-2 text-5xl font-extrabold text-[var(--oxpins-primary)]">
-              00
+          <div className="overflow-hidden rounded-2xl sm:rounded-[24px]">
+            <Image
+              src={aboutGallery[5].src}
+              alt={aboutGallery[5].alt}
+              width={720}
+              height={480}
+              className="h-64 w-full object-cover sm:h-80"
+            />
+            <div className="bg-[var(--oxpins-base)] p-6 text-white sm:p-8">
+              <div className="mb-2 text-4xl font-extrabold text-[var(--oxpins-primary)] sm:text-5xl">
+                00
+              </div>
+              <p className="text-lg font-bold sm:text-xl">
+                We’ve helped our poor children
+              </p>
             </div>
-            <p className="text-xl font-bold">We’ve helped our poor children</p>
           </div>
         </div>
       </section>
 
       <section className="section-pad">
-        <div className="container-site grid gap-8 md:grid-cols-3">
+        <div className="container-site grid gap-6 md:grid-cols-3 md:gap-8">
           {[
             [
               "Our Purpose",
@@ -125,9 +144,9 @@ export default function AboutPage() {
           ].map(([title, text]) => (
             <div
               key={title}
-              className="rounded-[24px] border border-[var(--oxpins-bdr-color)] p-6"
+              className="rounded-2xl border border-[var(--oxpins-bdr-color)] p-5 sm:rounded-[24px] sm:p-6"
             >
-              <h3 className="heading mb-3 text-2xl">{title}</h3>
+              <h3 className="heading mb-3 text-xl sm:text-2xl">{title}</h3>
               <p className="text-[var(--oxpins-gray)]">{text}</p>
             </div>
           ))}
@@ -135,14 +154,47 @@ export default function AboutPage() {
       </section>
 
       <section className="section-pad bg-[var(--oxpins-extra-two)]">
+        <div className="container-site">
+          <div className="mb-8 max-w-2xl sm:mb-10">
+            <p className="eyebrow mb-2">Our Work In Action</p>
+            <h2 className="heading text-2xl sm:text-3xl">
+              Moments From Our Community Initiatives
+            </h2>
+            <p className="mt-3 text-[var(--oxpins-gray)]">
+              Real moments from Vaibhav Foundation Welfare Society activities in
+              Jaipur — serving elders, supporting communities, and building care
+              together.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 lg:grid-cols-4">
+            {aboutGallery.map((image) => (
+              <div
+                key={image.src}
+                className="overflow-hidden rounded-2xl bg-[var(--oxpins-extra)]"
+              >
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  width={480}
+                  height={360}
+                  className="h-40 w-full object-cover transition duration-500 hover:scale-105 sm:h-44 md:h-48"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-pad">
         <div className="container-site grid gap-10 lg:grid-cols-2">
           <div>
-            <h2 className="heading mb-6 text-3xl">Our Values</h2>
+            <h2 className="heading mb-6 text-2xl sm:text-3xl">Our Values</h2>
             <div className="grid grid-cols-2 gap-3">
               {values.map((value) => (
                 <div
                   key={value}
-                  className="rounded-2xl bg-white px-4 py-3 font-semibold text-[var(--oxpins-black)] shadow-sm"
+                  className="rounded-2xl bg-[var(--oxpins-extra)] px-4 py-3 font-semibold text-[var(--oxpins-black)]"
                 >
                   {value}
                 </div>
@@ -150,7 +202,7 @@ export default function AboutPage() {
             </div>
           </div>
           <div>
-            <h2 className="heading mb-6 text-3xl">What We Work For</h2>
+            <h2 className="heading mb-6 text-2xl sm:text-3xl">What We Work For</h2>
             <ul className="space-y-3">
               {workFor.map((item) => (
                 <li key={item} className="flex items-center gap-3">
@@ -165,15 +217,17 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section-pad">
+      <section className="section-pad bg-[var(--oxpins-extra)]">
         <div className="container-site max-w-4xl text-center">
-          <h2 className="heading mb-4 text-3xl">Why We Started</h2>
+          <h2 className="heading mb-4 text-2xl sm:text-3xl">Why We Started</h2>
           <p className="mb-8 text-[var(--oxpins-gray)]">
             Vaibhav Foundation Welfare Society was started with a simple thought
             — to help people, support society and create a platform where
             everyone can contribute towards meaningful social change.
           </p>
-          <h3 className="heading mb-3 text-2xl">Join Us In Serving Society</h3>
+          <h3 className="heading mb-3 text-xl sm:text-2xl">
+            Join Us In Serving Society
+          </h3>
           <p className="mb-6 text-[var(--oxpins-gray)]">
             Your support can help us reach more people and create a positive
             impact in the community. Join us as a donor, volunteer or supporter.
