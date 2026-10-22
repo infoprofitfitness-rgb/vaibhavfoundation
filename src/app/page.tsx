@@ -338,7 +338,15 @@ export default function HomePage() {
             </h2>
             <p className="text-[var(--oxpins-gray)]">
               Connect with us to donate, volunteer, collaborate or support our
-              upcoming welfare initiatives.
+              upcoming welfare initiatives.{" "}
+              <a
+                href="https://www.goblazingads.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-[var(--oxpins-base)] underline decoration-[var(--oxpins-primary)] underline-offset-4 transition hover:text-[var(--oxpins-black)]"
+              >
+                Social media marketing and management in Jaipur by GoBlazing Ads
+              </a>
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
